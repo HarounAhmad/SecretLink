@@ -1,0 +1,18 @@
+
+crypto:
+  secret-key: "aBcDeFgHiJkLmNoPqRsTuVwXyZ123456"
+
+
+spring:
+  application:
+    name: "SecretLink"
+  datasource:
+    url: jdbc:postgresql://minikube:30001/database
+    username: user
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
