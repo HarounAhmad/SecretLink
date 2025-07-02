@@ -2,6 +2,9 @@
 crypto:
   secret-key: "aBcDeFgHiJkLmNoPqRsTuVwXyZ123456"
 
+cleanup:
+  task:
+    rate: 3600000
 
 spring:
   application:

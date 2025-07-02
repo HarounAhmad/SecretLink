@@ -15,10 +15,8 @@ import java.util.Base64;
 public class CryptoService {
     private final SecretKeySpec secretKeySpec;
 
-    public CryptoService(@Value("${crypto.secret-key}") String secretKey) {
-        // Key must be 32 bytes for AES-256
-        byte[] keyBytes = Arrays.copyOf(secretKey.getBytes(StandardCharsets.UTF_8), 32);
-        this.secretKeySpec = new SecretKeySpec(keyBytes, "AES");
+    public CryptoService(SecretKeySpec secretKeySpec) {
+        this.secretKeySpec = secretKeySpec;
     }
 
     public CryptoResult encrypt(String plaintext) {
