@@ -20,6 +20,7 @@ public class CleanupTask {
 
     @Scheduled(fixedRateString = "#{@schedulerConfig.rate}")
     public void deleteExpiredOrUsedSecrets() {
+        log.info("Starting cleanup task to delete expired or used secrets");
         Instant now = Instant.now();
         List<Secret> secretsToDelete = secretRepository.findAll().stream()
                 .filter(secret -> secret.isUsed() || secret.getExpiresAt().isBefore(now))

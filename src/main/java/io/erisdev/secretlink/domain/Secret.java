@@ -17,7 +17,8 @@ public class Secret {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Lob
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String encryptedPayload;
 
     @Column(nullable = false)

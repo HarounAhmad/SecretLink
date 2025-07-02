@@ -4,7 +4,7 @@ crypto:
 
 cleanup:
   task:
-    rate: 3600000
+    rate: 3000
 
 spring:
   application:

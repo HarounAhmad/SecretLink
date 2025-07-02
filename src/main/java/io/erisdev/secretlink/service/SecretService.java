@@ -30,7 +30,7 @@ public class SecretService {
                 .encryptedPayload(cryptoResult.getEncryptedPayload())
                 .iv(cryptoResult.getIv())
                 .accessToken(UUID.randomUUID().toString())
-                .expiresAt(Instant.now().plus(Duration.ofHours(requestDto.getTtlHours())))
+                .expiresAt(requestDto.getExpiresAt())
                 .used(false)
                 .build();
 
