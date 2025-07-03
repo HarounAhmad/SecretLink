@@ -35,7 +35,7 @@ public class SecretService {
                 .build();
 
 
-        secretRepository.save(secret);
+        secret = secretRepository.save(secret);
 
         String accessUrl = String.format("/secret/%d/%s", secret.getId(), secret.getAccessToken());
 
